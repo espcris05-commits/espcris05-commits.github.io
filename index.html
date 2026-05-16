@@ -3,228 +3,394 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cero MX — Automatización Inteligente para tu Negocio</title>
-  <meta name="description" content="Cero MX: bots de WhatsApp, landing pages y automatización IA para negocios locales. Captura leads 24/7 y cierra más ventas sin programar.">
+  <title>Cero MX — Automatización Inteligente</title>
+  <meta name="description" content="Cero MX: bots de WhatsApp, landing pages y automatización IA para negocios. Captura leads 24/7 y cierra más ventas sin programar.">
   <meta name="facebook-domain-verification" content="f1q5ibwdwwpl4qd0f1hu45i9u3em2d">
   <link rel="canonical" href="https://zeromx.lat">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f8fafc;color:#1e293b;line-height:1.6}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8fafc;color:#0f172a;line-height:1.6;overflow-x:hidden}
     .container{max-width:1100px;margin:0 auto;padding:0 24px}
-    
-    header{background:linear-gradient(135deg,#1e3a5f 0%,#2563eb 100%);padding:80px 0 60px;text-align:center;color:#fff}
-    header .logo{font-size:2.8rem;font-weight:800;letter-spacing:-1px;margin-bottom:8px}
-    header .logo span{color:#60a5fa}
-    header p{font-size:1.2rem;color:#bfdbfe;max-width:600px;margin:0 auto 32px}
-    .btn{display:inline-block;padding:14px 36px;border-radius:12px;font-weight:600;text-decoration:none;font-size:1.05rem;background:#f59e0b;color:#1e293b;transition:all .2s;border:none;cursor:pointer}
-    .btn:hover{transform:translateY(-2px);box-shadow:0 4px 20px rgba(245,158,11,0.4)}
-    .btn-outline{background:transparent;border:2px solid rgba(255,255,255,0.3);color:#fff}
-    .btn-outline:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.6)}
 
-    section{padding:80px 0}
-    h2{font-size:2rem;margin-bottom:12px;color:#1e293b}
+    /* NAV */
+    nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(255,255,255,0.85);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.06);transition:all .3s}
+    nav .container{display:flex;justify-content:space-between;align-items:center;height:64px}
+    nav .logo{font-size:1.3rem;font-weight:800;color:#0f172a;text-decoration:none}
+    nav .logo span{color:#2563eb}
+    nav .nav-links{display:flex;gap:28px;align-items:center}
+    nav .nav-links a{color:#475569;text-decoration:none;font-size:0.9rem;font-weight:500;transition:color .2s}
+    nav .nav-links a:hover{color:#2563eb}
+    nav .nav-cta{background:#2563eb;color:#fff!important;padding:8px 20px;border-radius:8px;font-weight:600!important}
+    nav .nav-cta:hover{background:#1d4ed8!important;color:#fff!important}
+
+    /* HERO */
+    header{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 50%,#2563eb 100%)}
+    header::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,0.15),transparent 70%);top:-200px;right:-200px;animation:pulse 8s infinite}
+    header::after{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(96,165,250,0.1),transparent 70%);bottom:-100px;left:-100px;animation:pulse 8s infinite reverse}
+    @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+    .hero{position:relative;z-index:2;padding:120px 0 80px}
+    .hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center}
+    .hero-badge{display:inline-block;background:rgba(96,165,250,0.15);color:#93c5fd;padding:6px 16px;border-radius:50px;font-size:0.8rem;font-weight:600;margin-bottom:20px;border:1px solid rgba(96,165,250,0.2)}
+    .hero h1{font-size:3.5rem;font-weight:900;line-height:1.1;color:#fff;margin-bottom:20px;letter-spacing:-1.5px}
+    .hero h1 span{background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .hero p{font-size:1.15rem;color:#94a3b8;max-width:520px;margin-bottom:32px;line-height:1.7}
+    .hero-buttons{display:flex;gap:12px;flex-wrap:wrap}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:12px;font-weight:600;font-size:1rem;text-decoration:none;background:#f59e0b;color:#0f172a;transition:all .3s;border:none;cursor:pointer}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(245,158,11,0.35)}
+    .btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:12px;font-weight:600;font-size:1rem;text-decoration:none;background:rgba(255,255,255,0.08);color:#e2e8f0;transition:all .3s;border:1px solid rgba(255,255,255,0.12)}
+    .btn-secondary:hover{background:rgba(255,255,255,0.15)}
+    .hero-stats{display:flex;gap:40px;margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.08)}
+    .hero-stat .num{font-size:1.8rem;font-weight:800;color:#fff}
+    .hero-stat .label{font-size:0.8rem;color:#64748b;margin-top:4px}
+
+    .hero-visual{position:relative}
+    .hero-phone{background:linear-gradient(180deg,#1e293b,#0f172a);border-radius:24px;padding:20px;border:1px solid rgba(255,255,255,0.1);box-shadow:0 20px 60px rgba(0,0,0,0.4)}
+    .hero-phone .chat{display:flex;flex-direction:column;gap:10px}
+    .hero-phone .msg{max-width:80%;padding:10px 14px;border-radius:14px;font-size:0.85rem;line-height:1.4;animation:fadeIn .5s both}
+    .hero-phone .msg.in{background:#334155;color:#e2e8f0;align-self:flex-start;border-bottom-left-radius:4px}
+    .hero-phone .msg.out{background:#2563eb;color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+    .hero-phone .msg:nth-child(1){animation-delay:.2s}
+    .hero-phone .msg:nth-child(2){animation-delay:.8s}
+    .hero-phone .msg:nth-child(3){animation-delay:1.4s}
+    .hero-phone .msg:nth-child(4){animation-delay:2s}
+    .hero-phone .msg:nth-child(5){animation-delay:2.6s}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    .hero-phone .typing{display:flex;gap:4px;padding:8px 0;align-self:flex-start;padding-left:4px}
+    .hero-phone .typing span{width:6px;height:6px;border-radius:50%;background:#475569;animation:bounce 1.4s infinite}
+    .hero-phone .typing span:nth-child(2){animation-delay:.2s}
+    .hero-phone .typing span:nth-child(3){animation-delay:.4s}
+    @keyframes bounce{0%,80%,100%{transform:translateY(0)}40%{transform:translateY(-6px)}}
+
+    section{padding:100px 0}
+    .section-label{display:inline-block;color:#2563eb;font-weight:700;font-size:0.85rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+    h2{font-size:2.4rem;font-weight:800;margin-bottom:12px;color:#0f172a;letter-spacing:-1px}
     h2 span{color:#2563eb}
-    .sub{color:#64748b;font-size:1.1rem;margin-bottom:48px;max-width:600px}
-    
+    .sub{color:#64748b;font-size:1.05rem;margin-bottom:48px;max-width:560px;line-height:1.7}
+
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
     .card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:32px;transition:all .3s}
-    .card:hover{border-color:#2563eb;box-shadow:0 4px 24px rgba(37,99,235,0.08)}
-    .card .icon{font-size:2rem;margin-bottom:12px}
-    .card h3{font-size:1.25rem;margin-bottom:8px;color:#0f172a}
-    .card p{color:#64748b;font-size:0.95rem}
-    .price{color:#2563eb;font-weight:600;margin-top:12px}
+    .card:hover{border-color:#2563eb;box-shadow:0 8px 32px rgba(37,99,235,0.08);transform:translateY(-2px)}
+    .card .icon{font-size:2rem;margin-bottom:16px}
+    .card h3{font-size:1.2rem;margin-bottom:8px;color:#0f172a}
+    .card p{color:#64748b;font-size:0.95rem;line-height:1.6}
+    .price{color:#2563eb;font-weight:700;margin-top:12px;font-size:1.1rem}
+    .tag{display:inline-block;background:#dbeafe;color:#1d4ed8;padding:4px 12px;border-radius:20px;font-size:0.75rem;margin-bottom:10px;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
 
-    .tag{display:inline-block;background:#dbeafe;color:#1d4ed8;padding:4px 12px;border-radius:20px;font-size:0.8rem;margin-bottom:8px;font-weight:500}
+    /* HOW IT WORKS */
+    #how{background:#fff}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:16px}
+    .step{text-align:center;padding:32px;position:relative}
+    .step:not(:last-child)::after{content:'→';position:absolute;right:-20px;top:50%;transform:translateY(-50%);font-size:2rem;color:#2563eb;opacity:0.3}
+    .step-num{width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,#2563eb,#60a5fa);color:#fff;font-size:1.4rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+    .step h3{font-size:1.2rem;margin-bottom:8px}
+    .step p{color:#64748b;font-size:0.92rem;line-height:1.6;max-width:280px;margin:0 auto}
 
-    #demos{background:#fff;border-top:1px solid #e2e8f0}
-    .video-card{text-align:center}
-    .video-card video{width:100%;border-radius:12px;aspect-ratio:16/9;background:#f1f5f9;border:1px solid #e2e8f0}
+    /* PRICING */
+    #pricing{background:#f8fafc}
+    .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .pricing-card{background:#fff;border:1px solid #e2e8f0;border-radius:20px;padding:40px 32px;transition:all .3s;position:relative}
+    .pricing-card:hover{border-color:#2563eb;box-shadow:0 12px 40px rgba(37,99,235,0.1)}
+    .pricing-card.featured{border-color:#2563eb;box-shadow:0 12px 40px rgba(37,99,235,0.12);transform:scale(1.03)}
+    .pricing-card.featured .popular-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#2563eb,#60a5fa);color:#fff;padding:4px 20px;border-radius:50px;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+    .pricing-card .plan-name{font-size:0.9rem;font-weight:600;color:#475569;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+    .pricing-card .plan-price{font-size:2.5rem;font-weight:900;color:#0f172a;margin-bottom:4px}
+    .pricing-card .plan-price span{font-size:1rem;font-weight:500;color:#64748b}
+    .pricing-card .plan-setup{color:#94a3b8;font-size:0.85rem;margin-bottom:24px}
+    .pricing-card ul{list-style:none;padding:0;margin-bottom:28px}
+    .pricing-card ul li{padding:8px 0;color:#475569;font-size:0.9rem;border-bottom:1px solid #f1f5f9}
+    .pricing-card ul li:last-child{border-bottom:none}
+    .pricing-card ul li::before{content:'✓';color:#2563eb;font-weight:700;margin-right:8px}
+    .pricing-card .btn-pricing{display:block;text-align:center;padding:12px;border-radius:10px;font-weight:600;font-size:0.95rem;text-decoration:none;background:#f1f5f9;color:#0f172a;transition:all .2s}
+    .pricing-card .btn-pricing:hover{background:#e2e8f0}
+    .pricing-card.featured .btn-pricing{background:#2563eb;color:#fff}
+    .pricing-card.featured .btn-pricing:hover{background:#1d4ed8}
 
-    #contact{background:linear-gradient(135deg,#1e3a5f 0%,#2563eb 100%);color:#fff;text-align:center}
+    /* ONCE OFF */
+    .once-off{margin-top:24px;text-align:center}
+    .once-off-box{display:inline-flex;align-items:center;gap:16px;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:16px 28px}
+    .once-off-box span{font-weight:600}
+    .once-off-box .price-once{color:#f59e0b;font-weight:800;font-size:1.2rem}
+
+    /* PROJECTS */
+    #projects{background:#fff}
+    .project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+
+    /* DEMOS */
+    #demos{background:#f8fafc}
+    .video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .video-card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;overflow:hidden;transition:all .3s}
+    .video-card:hover{box-shadow:0 8px 32px rgba(0,0,0,0.06);border-color:#2563eb}
+    .video-card video{width:100%;display:block;aspect-ratio:16/9;background:#f1f5f9}
+    .video-card .video-info{padding:20px}
+    .video-card .video-info h3{font-size:1rem;margin-bottom:4px}
+    .video-card .video-info p{font-size:0.85rem;color:#64748b;line-height:1.5}
+
+    /* CONTACT */
+    #contact{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 50%,#2563eb 100%);color:#fff;text-align:center;padding:100px 0}
     #contact h2{color:#fff}
     #contact h2 span{color:#60a5fa}
-    #contact .sub{color:#bfdbfe}
-    .contact-card{background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.15);border-radius:16px;padding:40px;max-width:500px;margin:0 auto}
-    .contact-card a{color:#60a5fa;text-decoration:none}
-    .contact-card a:hover{text-decoration:underline}
-    .badge{display:inline-block;background:#059669;color:#a7f3d0;padding:8px 20px;border-radius:20px;font-size:0.9rem;margin-bottom:16px}
+    #contact .sub{color:#94a3b8;margin:0 auto 48px}
+    .contact-card{background:rgba(255,255,255,0.06);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.1);border-radius:24px;padding:48px;max-width:520px;margin:0 auto}
+    .contact-badge{display:inline-block;background:rgba(5,150,105,0.2);color:#6ee7b7;padding:8px 20px;border-radius:50px;font-size:0.85rem;font-weight:600;margin-bottom:16px}
+    .contact-card h3{font-size:1.3rem;margin-bottom:4px}
+    .contact-card .contact-sub{color:#94a3b8;font-size:0.92rem;margin-bottom:28px}
+    .contact-card .btn-contact{display:inline-flex;align-items:center;gap:8px;padding:14px 36px;border-radius:12px;font-weight:600;font-size:1rem;text-decoration:none;background:#f59e0b;color:#0f172a;transition:all .3s}
+    .contact-card .btn-contact:hover{box-shadow:0 8px 30px rgba(245,158,11,0.3);transform:translateY(-1px)}
+    .contact-card .contact-alt{margin-top:16px;color:#64748b;font-size:0.85rem}
+    .contact-card .contact-alt a{color:#60a5fa;text-decoration:none}
+    .demo-cta{margin-top:32px}
+    .demo-cta p{color:#94a3b8;margin-bottom:12px}
+    .demo-cta .btn-demo{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:12px;font-weight:600;font-size:0.95rem;text-decoration:none;background:#fff;color:#0f172a;transition:all .3s}
+    .demo-cta .btn-demo:hover{box-shadow:0 8px 30px rgba(255,255,255,0.15)}
 
-    footer{text-align:center;padding:32px 0;color:#94a3b8;font-size:0.9rem;border-top:1px solid #e2e8f0;background:#fff}
+    footer{background:#0f172a;color:#475569;text-align:center;padding:32px 0;font-size:0.85rem;border-top:1px solid rgba(255,255,255,0.05)}
+    footer a{color:#64748b;text-decoration:none}
+    footer a:hover{color:#94a3b8}
 
-    @media(max-width:768px){
-      header{padding:60px 0 40px}
-      header .logo{font-size:2rem}
-      h1{font-size:2rem}
-      section{padding:60px 0}
+    @media(max-width:900px){
+      .hero-grid{grid-template-columns:1fr;gap:40px}
+      .hero h1{font-size:2.5rem}
+      .hero-visual{display:none}
+      .steps{grid-template-columns:1fr}
+      .step:not(:last-child)::after{display:none}
+      .pricing-grid,.video-grid,.project-grid{grid-template-columns:1fr}
+      .pricing-card.featured{transform:none}
+      h2{font-size:1.8rem}
+      header{min-height:auto}
+      .hero-stats{gap:24px;flex-wrap:wrap}
+      nav .nav-links a:not(.nav-cta){display:none}
     }
   </style>
 </head>
 <body>
-  <header>
+  <nav>
     <div class="container">
-      <div class="logo">⚡ Cero <span>MX</span></div>
-      <p>Automatización inteligente para tu negocio. Bots de WhatsApp que capturan leads 24/7, cierran ventas y trabajan mientras tú descansas.</p>
-      <a href="#contact" class="btn">Quiero más clientes →</a>
+      <a href="#" class="logo">⚡ Cero <span>MX</span></a>
+      <div class="nav-links">
+        <a href="#how">¿Cómo funciona?</a>
+        <a href="#pricing">Planes</a>
+        <a href="#demos">Demos</a>
+        <a href="#projects">Proyectos</a>
+        <a href="#contact" class="nav-cta">Contactar</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="container hero">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-badge">🤖 Automatización Inteligente</div>
+          <h1>Tu negocio <span>nunca duerme</span> con Cero MX</h1>
+          <p>Bots de WhatsApp que capturan leads, responden clientes y cierran ventas 24/7. Tú solo llegas a cobrar.</p>
+          <div class="hero-buttons">
+            <a href="#contact" class="btn-primary">Quiero más clientes →</a>
+            <a href="#demos" class="btn-secondary">▶ Ver demos</a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="num">24/7</div>
+              <div class="label">Atención continua</div>
+            </div>
+            <div class="hero-stat">
+              <div class="num">3x</div>
+              <div class="label">Más leads capturados</div>
+            </div>
+            <div class="hero-stat">
+              <div class="num">0</div>
+              <div class="label">Código necesario</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-phone">
+            <div class="chat">
+              <div class="msg in">Hola, ¿tienen servicio a domicilio?</div>
+              <div class="typing"><span></span><span></span><span></span></div>
+              <div class="msg out">¡Hola! 😊 Claro que sí. ¿Qué te gustaría pedir?</div>
+              <div class="msg in">¿Cuánto cuesta la pizza familiar?</div>
+              <div class="msg out">$249 la familiar de pepperoni 🍕 ¿Te la llevamos?</div>
+              <div class="msg in">Sí, mándame una</div>
+              <div class="msg out">✅ Perfecto. Dame tu dirección y en 30 min la tienes.</div>
+              <div class="msg in">Av. Morelos #123</div>
+              <div class="msg out">¡Listo! Son $249, puedes pagar al recibir 💳</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
-  <!-- CÓMO FUNCIONA -->
-  <section>
+  <section id="how">
     <div class="container">
-      <h2>¿Cómo <span>funciona</span>?</h2>
-      <p class="sub">Tres pasos para nunca perder un cliente</p>
-      <div class="grid">
-        <div class="card" style="text-align:center">
-          <div class="icon" style="font-size:3rem">📱</div>
-          <h3>1. Cliente te escribe</h3>
-          <p>Un cliente llega a tu WhatsApp o landing page. El bot lo recibe al instante, incluso si son las 3 AM.</p>
+      <div class="section-label">Cómo funciona</div>
+      <h2>Tres pasos para <span>nunca perder</span> un cliente</h2>
+      <p class="sub">Desde que el cliente escribe hasta que cobras, todo automatizado.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>📱 Cliente te escribe</h3>
+          <p>Un cliente llega a tu WhatsApp o landing page. El bot lo recibe al instante, sin importar la hora.</p>
         </div>
-        <div class="card" style="text-align:center">
-          <div class="icon" style="font-size:3rem">🤖</div>
-          <h3>2. Bot atiende</h3>
-          <p>Responde preguntas, califica el lead, agenda una cita o cobra. Todo sin que muevas un dedo.</p>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>🤖 Bot atiende</h3>
+          <p>Responde preguntas, califica el lead, agenda citas o cobra. Todo sin que muevas un dedo.</p>
         </div>
-        <div class="card" style="text-align:center">
-          <div class="icon" style="font-size:3rem">💰</div>
-          <h3>3. Tú cobras</h3>
-          <p>Solo llegas a cerrar la venta. El bot hizo el trabajo pesado. Más ventas, cero esfuerzo extra.</p>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>💰 Tú cobras</h3>
+          <p>Llegas solo a cerrar la venta. El bot hizo el trabajo pesado. Más ventas, cero esfuerzo extra.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PLANES -->
-  <section style="background:#fff;border-top:1px solid #e2e8f0">
+  <section id="pricing">
     <div class="container">
-      <h2>Planes <span>simples</span></h2>
-      <p class="sub">Sin contratos, sin cláusulas escondidas. Eliges cómo pagas.</p>
-      <div class="grid">
-        <div class="card">
-          <div class="icon">⭐</div>
-          <h3>Starter</h3>
-          <p>Bot de WhatsApp o mini landing page. Ideal para negocios que quieren empezar a capturar leads sin complicaciones.</p>
-          <div style="margin-top:16px">
-            <div style="color:#94a3b8;font-size:0.9rem">Setup único: <strong style="color:#1e293b">$3,500</strong></div>
-            <div class="price" style="font-size:1.2rem">$699/mes</div>
-            <div style="color:#94a3b8;font-size:0.8rem">Soporte incluido</div>
-          </div>
+      <div class="section-label">Planes</div>
+      <h2>Precios <span>transparentes</span></h2>
+      <p class="sub">Sin contratos, sin cláusulas escondidas. Elige el plan que mejor se ajuste a tu negocio.</p>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="plan-name">⭐ Starter</div>
+          <div class="plan-price">$699 <span>/mes</span></div>
+          <div class="plan-setup">+ $3,500 setup único</div>
+          <ul>
+            <li>Bot de WhatsApp o landing page</li>
+            <li>Captura automática de leads</li>
+            <li>Respuestas 24/7</li>
+            <li>Soporte incluido</li>
+          </ul>
+          <a href="#contact" class="btn-pricing">Elegir Starter</a>
         </div>
-        <div class="card" style="border-color:#2563eb;box-shadow:0 4px 24px rgba(37,99,235,0.1)">
-          <div class="icon">🔥</div>
-          <div class="tag">Más popular</div>
-          <h3>Growth</h3>
-          <p>Bot de WhatsApp + landing page + asistente IA. Captura, califica y da seguimiento automático a cada lead.</p>
-          <div style="margin-top:16px">
-            <div style="color:#94a3b8;font-size:0.9rem">Setup único: <strong style="color:#1e293b">$7,500</strong></div>
-            <div class="price" style="font-size:1.2rem">$1,499/mes</div>
-            <div style="color:#94a3b8;font-size:0.8rem">Soporte prioritario</div>
-          </div>
+        <div class="pricing-card featured">
+          <div class="popular-badge">Más popular</div>
+          <div class="plan-name">🔥 Growth</div>
+          <div class="plan-price">$1,499 <span>/mes</span></div>
+          <div class="plan-setup">+ $7,500 setup único</div>
+          <ul>
+            <li>Bot WhatsApp + landing page</li>
+            <li>Asistente IA para ventas</li>
+            <li>Calificación automática de leads</li>
+            <li>Seguimiento automatizado</li>
+            <li>Soporte prioritario</li>
+          </ul>
+          <a href="#contact" class="btn-pricing">Elegir Growth</a>
         </div>
-        <div class="card">
-          <div class="icon">🚀</div>
-          <h3>Pro</h3>
-          <p>Sistema completo: bot + landing + IA + leads + Meta Ads. Automatización total del proceso de ventas.</p>
-          <div style="margin-top:16px">
-            <div style="color:#94a3b8;font-size:0.9rem">Setup único: <strong style="color:#1e293b">$15,000</strong></div>
-            <div class="price" style="font-size:1.2rem">$2,999/mes</div>
-            <div style="color:#94a3b8;font-size:0.8rem">Soporte VIP + reportes</div>
-          </div>
+        <div class="pricing-card">
+          <div class="plan-name">🚀 Pro</div>
+          <div class="plan-price">$2,999 <span>/mes</span></div>
+          <div class="plan-setup">+ $15,000 setup único</div>
+          <ul>
+            <li>Sistema completo de ventas</li>
+            <li>Bot + landing + IA</li>
+            <li>Meta Ads integrados</li>
+            <li>Reportes semanales</li>
+            <li>Soporte VIP 24/7</li>
+          </ul>
+          <a href="#contact" class="btn-pricing">Elegir Pro</a>
         </div>
       </div>
-      <div style="text-align:center;margin-top:32px">
-        <p style="color:#64748b;margin-bottom:12px">¿Prefieres pagar una sola vez?</p>
-        <div style="display:inline-block;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:16px 32px">
-          <span style="font-size:1rem;font-weight:600">Solo Setup</span>
-          <span style="color:#64748b;margin:0 12px">—</span>
-          <span style="color:#f59e0b;font-weight:600">Desde $3,500</span>
-          <span style="color:#64748b;margin-left:8px;font-size:0.9rem">sin mensualidad</span>
+      <div class="once-off">
+        <div class="once-off-box">
+          <span>💡 ¿Prefieres pagar una sola vez?</span>
+          <span class="price-once">Desde $3,500</span>
+          <span style="color:#64748b;font-size:0.85rem">sin mensualidad</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PROYECTOS -->
-  <section>
+  <section id="projects">
     <div class="container">
-      <h2>Proyectos <span>en acción</span></h2>
-      <p class="sub">Casos reales de automatización que ya generan resultados en Morelia</p>
-      <div class="grid">
+      <div class="section-label">Proyectos</div>
+      <h2>Casos <span>reales</span></h2>
+      <p class="sub">Automatizaciones que ya están generando resultados en Morelia.</p>
+      <div class="project-grid">
         <div class="card">
           <div class="icon">🚕</div>
           <div class="tag">Morelia</div>
           <h3>Choferes Morelia</h3>
-          <p>Servicio de transporte ejecutivo conectado vía WhatsApp. Los clientes piden su viaje en segundos. Cotizaciones, reservas y seguimiento automatizados.</p>
+          <p>Transporte ejecutivo conectado vía WhatsApp. Clientes piden viaje en segundos, cotizaciones y reservas automatizadas.</p>
         </div>
         <div class="card">
           <div class="icon">👶</div>
           <div class="tag">Morelia</div>
           <h3>Niñeras Morelia</h3>
-          <p>Plataforma de cuidado infantil con selección automatizada. Familias encuentran niñeras verificadas cerca de su colonia, agendan y pagan por WhatsApp.</p>
+          <p>Plataforma de cuidado infantil. Familias encuentran niñeras verificadas cerca de su colonia, agendan y pagan por WhatsApp.</p>
         </div>
         <div class="card">
           <div class="icon">🍕</div>
           <div class="tag">WhatsApp Bot</div>
           <h3>Restaurantes</h3>
-          <p>Menú digital, pedidos y pagos automatizados por WhatsApp. Sin apps, el bot recibe el pedido, lo envía a cocina y notifica al cliente.</p>
+          <p>Menú digital, pedidos y pagos automatizados. El bot recibe el pedido, lo envía a cocina y notifica al cliente.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- DEMOS -->
   <section id="demos">
     <div class="container">
+      <div class="section-label">Demos</div>
       <h2>Mira cómo <span>funciona</span></h2>
-      <p class="sub">Demos rápidas de nuestras automatizaciones en acción</p>
-      <div class="grid">
-        <div class="card video-card">
+      <p class="sub">Demos rápidas de nuestras automatizaciones en acción.</p>
+      <div class="video-grid">
+        <div class="video-card">
           <video controls playsinline poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='360' viewBox='0 0 640 360'%3E%3Crect fill='%23dbeafe' width='640' height='360'/%3E%3Ctext x='320' y='170' text-anchor='middle' fill='%232563eb' font-size='28' font-family='sans-serif'%3E%F0%9F%93%B1 Bot WhatsApp%3C/text%3E%3Ctext x='320' y='210' text-anchor='middle' fill='%2364748b' font-size='16' font-family='sans-serif'%3E%C2%A1Presiona play!%3C/text%3E%3C/svg%3E">
             <source src="/demos/whatsapp-bot-demo.mp4" type="video/mp4">
           </video>
-          <h3>Bot WhatsApp</h3>
-          <p>Responde clientes, califica leads y agenda citas 24/7.</p>
+          <div class="video-info">
+            <h3>📱 Bot WhatsApp</h3>
+            <p>Responde clientes, califica leads y agenda citas 24/7.</p>
+          </div>
         </div>
-        <div class="card video-card">
+        <div class="video-card">
           <video controls playsinline poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='360' viewBox='0 0 640 360'%3E%3Crect fill='%23dbeafe' width='640' height='360'/%3E%3Ctext x='320' y='170' text-anchor='middle' fill='%232563eb' font-size='28' font-family='sans-serif'%3E%F0%9F%8C%90 Landing%3C/text%3E%3Ctext x='320' y='210' text-anchor='middle' fill='%2364748b' font-size='16' font-family='sans-serif'%3E%C2%A1Presiona play!%3C/text%3E%3C/svg%3E">
             <source src="/demos/landing-whatsapp-demo.mp4" type="video/mp4">
           </video>
-          <h3>Landing + WhatsApp</h3>
-          <p>Cliente llega, ve la página y en 30 segundos ya está conversando.</p>
+          <div class="video-info">
+            <h3>🌐 Landing + WhatsApp</h3>
+            <p>Cliente llega, ve la página y en 30 segundos ya está conversando.</p>
+          </div>
         </div>
-        <div class="card video-card">
+        <div class="video-card">
           <video controls playsinline poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='360' viewBox='0 0 640 360'%3E%3Crect fill='%23dbeafe' width='640' height='360'/%3E%3Ctext x='320' y='170' text-anchor='middle' fill='%232563eb' font-size='28' font-family='sans-serif'%3E%F0%9F%A4%96 IA Ventas%3C/text%3E%3Ctext x='320' y='210' text-anchor='middle' fill='%2364748b' font-size='16' font-family='sans-serif'%3E%C2%A1Presiona play!%3C/text%3E%3C/svg%3E">
             <source src="/demos/ai-sales-demo.mp4" type="video/mp4">
           </video>
-          <h3>Asistente IA</h3>
-          <p>Un empleado digital que trabaja 24/7. Nunca se cansa, nunca deja de vender.</p>
+          <div class="video-info">
+            <h3>🤖 Asistente IA</h3>
+            <p>Un empleado digital que trabaja 24/7. Nunca se cansa, nunca deja de vender.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACTO -->
   <section id="contact">
     <div class="container">
       <h2>¿Listo para <span>automatizar</span>?</h2>
-      <p class="sub">Respuesta en menos de 5 minutos</p>
+      <p class="sub">Respuesta en menos de 5 minutos. Sin presión, sin compromiso.</p>
       <div class="contact-card">
-        <div class="badge">⚡ Respuesta automática en menos de 2 minutos</div>
-        <p style="font-size:1.2rem;margin-bottom:8px">Setup único o mensualidad con soporte</p>
-        <p style="color:#bfdbfe;margin-bottom:24px;font-size:0.95rem">Tú eliges. Ambos incluyen el sistema funcionando.</p>
-        <a href="https://wa.me/5215512299225?text=Hola%20Cero%20MX%2C%20quiero%20saber%20m%C3%A1s" class="btn">Contactar por WhatsApp</a>
-        <p style="margin-top:16px;color:#bfdbfe;font-size:0.9rem">o al correo <a href="mailto:espcris05@gmail.com">espcris05@gmail.com</a></p>
-        <p style="color:#bfdbfe;font-size:0.8rem;margin-top:8px">Disponible en México, Estados Unidos y Latinoamérica</p>
+        <div class="contact-badge">⚡ Respuesta automática en menos de 2 minutos</div>
+        <h3>Hablemos de tu negocio</h3>
+        <p class="contact-sub">Setup único o mensualidad con soporte. Tú eliges.</p>
+        <a href="https://wa.me/5215512299225?text=Hola%20Cero%20MX%2C%20quiero%20saber%20m%C3%A1s" class="btn-contact">💬 Contactar por WhatsApp</a>
+        <p class="contact-alt">o al correo <a href="mailto:espcris05@gmail.com">espcris05@gmail.com</a></p>
       </div>
-      <div style="margin-top:40px">
-        <p style="color:#bfdbfe;font-size:1.1rem">¿Quieres ver una demo personalizada para tu negocio?</p>
-        <a href="https://wa.me/5215512299225?text=Quiero%20ver%20una%20demo" class="btn" style="margin-top:12px;background:#fff;color:#1e3a5f">Pide tu demo gratis →</a>
+      <div class="demo-cta">
+        <p>¿Quieres ver una demo personalizada para tu negocio?</p>
+        <a href="https://wa.me/5215512299225?text=Quiero%20ver%20una%20demo" class="btn-demo">🎬 Pide tu demo gratis →</a>
       </div>
     </div>
   </section>
 
   <footer>
     <div class="container">
-      <p>© 2026 Cero MX — Automatización Inteligente para tu Negocio</p>
+      <p>© 2026 <a href="https://zeromx.lat">Cero MX</a> — Automatización Inteligente para tu Negocio</p>
     </div>
   </footer>
 </body>
