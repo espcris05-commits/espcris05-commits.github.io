@@ -3,204 +3,229 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Zero MX — Automatización Inteligente para tu Negocio</title>
-  <meta name="description" content="Zero MX: automatización, bots WhatsApp, asistentes IA y soluciones digitales para negocios en tu país. Genera más clientes con tecnología simple y efectiva.">
+  <title>Cero MX — Automatización Inteligente para tu Negocio</title>
+  <meta name="description" content="Cero MX: bots de WhatsApp, landing pages y automatización IA para negocios locales. Captura leads 24/7 y cierra más ventas sin programar.">
   <meta name="facebook-domain-verification" content="f1q5ibwdwwpl4qd0f1hu45i9u3em2d">
   <link rel="canonical" href="https://zeromx.lat">
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0a0a1a;color:#e2e8f0;line-height:1.6}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f8fafc;color:#1e293b;line-height:1.6}
     .container{max-width:1100px;margin:0 auto;padding:0 24px}
-    header{background:linear-gradient(135deg,#0a0a1a 0%,#1a1a3e 100%);padding:80px 0 60px;text-align:center}
-    h1{font-size:3.2rem;background:linear-gradient(135deg,#818cf8,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:16px}
-    header p{font-size:1.25rem;color:#94a3b8;max-width:600px;margin:0 auto 32px}
-    .btn{display:inline-block;padding:14px 36px;border-radius:12px;font-weight:600;text-decoration:none;font-size:1.05rem;background:linear-gradient(135deg,#6366f1,#38bdf8);color:#fff;transition:transform .2s}
-    .btn:hover{transform:translateY(-2px)}
+    
+    header{background:linear-gradient(135deg,#1e3a5f 0%,#2563eb 100%);padding:80px 0 60px;text-align:center;color:#fff}
+    header .logo{font-size:2.8rem;font-weight:800;letter-spacing:-1px;margin-bottom:8px}
+    header .logo span{color:#60a5fa}
+    header p{font-size:1.2rem;color:#bfdbfe;max-width:600px;margin:0 auto 32px}
+    .btn{display:inline-block;padding:14px 36px;border-radius:12px;font-weight:600;text-decoration:none;font-size:1.05rem;background:#f59e0b;color:#1e293b;transition:all .2s;border:none;cursor:pointer}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 4px 20px rgba(245,158,11,0.4)}
+    .btn-outline{background:transparent;border:2px solid rgba(255,255,255,0.3);color:#fff}
+    .btn-outline:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.6)}
+
     section{padding:80px 0}
-    h2{font-size:2rem;margin-bottom:16px;color:#f1f5f9}
-    h2 span{color:#38bdf8}
-    .sub{color:#94a3b8;font-size:1.1rem;margin-bottom:48px}
+    h2{font-size:2rem;margin-bottom:12px;color:#1e293b}
+    h2 span{color:#2563eb}
+    .sub{color:#64748b;font-size:1.1rem;margin-bottom:48px;max-width:600px}
+    
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
-    .card{background:#111827;border:1px solid #1e293b;border-radius:16px;padding:32px;transition:border-color .3s}
-    .card:hover{border-color:#6366f1}
+    .card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:32px;transition:all .3s}
+    .card:hover{border-color:#2563eb;box-shadow:0 4px 24px rgba(37,99,235,0.08)}
     .card .icon{font-size:2rem;margin-bottom:12px}
-    .card h3{font-size:1.3rem;margin-bottom:8px;color:#f1f5f9}
-    .card p{color:#94a3b8;font-size:0.95rem}
-    .price{color:#38bdf8;font-weight:600;margin-top:12px}
-    #contact{text-align:center;background:linear-gradient(135deg,#1a1a3e 0%,#0a0a1a 100%)}
-    .contact-card{background:#111827;border:1px solid #1e293b;border-radius:16px;padding:40px;max-width:500px;margin:0 auto}
-    .contact-card a{color:#38bdf8;text-decoration:none}
+    .card h3{font-size:1.25rem;margin-bottom:8px;color:#0f172a}
+    .card p{color:#64748b;font-size:0.95rem}
+    .price{color:#2563eb;font-weight:600;margin-top:12px}
+
+    .tag{display:inline-block;background:#dbeafe;color:#1d4ed8;padding:4px 12px;border-radius:20px;font-size:0.8rem;margin-bottom:8px;font-weight:500}
+
+    #demos{background:#fff;border-top:1px solid #e2e8f0}
+    .video-card{text-align:center}
+    .video-card video{width:100%;border-radius:12px;aspect-ratio:16/9;background:#f1f5f9;border:1px solid #e2e8f0}
+
+    #contact{background:linear-gradient(135deg,#1e3a5f 0%,#2563eb 100%);color:#fff;text-align:center}
+    #contact h2{color:#fff}
+    #contact h2 span{color:#60a5fa}
+    #contact .sub{color:#bfdbfe}
+    .contact-card{background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.15);border-radius:16px;padding:40px;max-width:500px;margin:0 auto}
+    .contact-card a{color:#60a5fa;text-decoration:none}
     .contact-card a:hover{text-decoration:underline}
-    footer{text-align:center;padding:32px 0;color:#475569;font-size:0.9rem;border-top:1px solid #1e293b}
-    .tag{display:inline-block;background:#1e293b;color:#38bdf8;padding:4px 12px;border-radius:20px;font-size:0.8rem;margin-bottom:8px}
-    @media(max-width:768px){h1{font-size:2.2rem}header{padding:60px 0 40px}section{padding:60px 0}}
+    .badge{display:inline-block;background:#059669;color:#a7f3d0;padding:8px 20px;border-radius:20px;font-size:0.9rem;margin-bottom:16px}
+
+    footer{text-align:center;padding:32px 0;color:#94a3b8;font-size:0.9rem;border-top:1px solid #e2e8f0;background:#fff}
+
+    @media(max-width:768px){
+      header{padding:60px 0 40px}
+      header .logo{font-size:2rem}
+      h1{font-size:2rem}
+      section{padding:60px 0}
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="container">
-      <h1>Zero MX</h1>
-      <p>Automatización inteligente para tu negocio. Bots de WhatsApp, asistentes IA y sistemas que trabajan por ti 24/7.</p>
+      <div class="logo">⚡ Cero <span>MX</span></div>
+      <p>Automatización inteligente para tu negocio. Bots de WhatsApp que capturan leads 24/7, cierran ventas y trabajan mientras tú descansas.</p>
       <a href="#contact" class="btn">Quiero más clientes →</a>
     </div>
   </header>
 
+  <!-- CÓMO FUNCIONA -->
   <section>
     <div class="container">
-      <h2>Soluciones <span>para crecer</span></h2>
-      <p class="sub">Tecnología simple que convierte visitantes en clientes</p>
+      <h2>¿Cómo <span>funciona</span>?</h2>
+      <p class="sub">Tres pasos para nunca perder un cliente</p>
       <div class="grid">
-        <div class="card">
-          <div class="icon">⭐</div>
-          <h3>Starter</h3>
-          <p>Bot de WhatsApp o mini landing page. Ideal para negocios que quieren empezar a capturar leads.</p>
-          <div class="price" style="color:#94a3b8;font-size:0.9rem">$3,500 setup</div>
-          <div class="price" style="color:#38bdf8;font-weight:600;font-size:1.1rem">$699/mes con soporte</div>
+        <div class="card" style="text-align:center">
+          <div class="icon" style="font-size:3rem">📱</div>
+          <h3>1. Cliente te escribe</h3>
+          <p>Un cliente llega a tu WhatsApp o landing page. El bot lo recibe al instante, incluso si son las 3 AM.</p>
         </div>
-        <div class="card">
-          <div class="icon">🔥</div>
-          <h3>Growth</h3>
-          <p>Bot de WhatsApp + landing page + asistente IA. Captura, califica y da seguimiento automático.</p>
-          <div class="price" style="color:#94a3b8;font-size:0.9rem">$7,500 setup</div>
-          <div class="price" style="color:#38bdf8;font-weight:600;font-size:1.1rem">$1,499/mes con soporte</div>
+        <div class="card" style="text-align:center">
+          <div class="icon" style="font-size:3rem">🤖</div>
+          <h3>2. Bot atiende</h3>
+          <p>Responde preguntas, califica el lead, agenda una cita o cobra. Todo sin que muevas un dedo.</p>
         </div>
-        <div class="card">
-          <div class="icon">🚀</div>
-          <h3>Pro</h3>
-          <p>Sistema completo: bot + landing + IA + leads + Meta Ads. Automatización total de ventas.</p>
-          <div class="price" style="color:#94a3b8;font-size:0.9rem">$15,000 setup</div>
-          <div class="price" style="color:#38bdf8;font-weight:600;font-size:1.1rem">$2,999/mes con soporte</div>
-        </div>
-        <div class="card">
-          <div class="icon">💡</div>
-          <h3>Solo Setup</h3>
-          <p>Versión básica. Pagas una vez y te llevas el sistema funcionando. Sin mantenimiento mensual.</p>
-          <div class="price" style="color:#94a3b8;font-size:0.9rem">Desde $3,500</div>
-          <div class="price" style="color:#f59e0b;font-weight:600;font-size:1.05rem">💰 Sin mensualidad</div>
-        </div>
-        <div class="card">
-          <div class="icon">🤝</div>
-          <h3>Revendedor</h3>
-          <p>Vende nuestros sistemas a tus clientes. Gana 20-30% del setup + 10% mensual recurrente.</p>
-          <div class="price" style="color:#94a3b8;font-size:0.9rem">Sin inversión inicial</div>
-          <div class="price" style="color:#a78bfa;font-weight:600;font-size:1.05rem">Comisión desde $700</div>
-        </div>
-        <div class="card">
-          <div class="icon">✈️</div>
-          <h3>eTA Canadá / Visas</h3>
-          <p>Gestión automatizada de eTA y visa canadiense. Tú compartes tus datos, nosotros lo procesamos.</p>
-          <div class="price" style="color:#94a3b8;font-size:0.9rem">Desde $699 MXN</div>
-          <div class="price" style="color:#38bdf8;font-weight:600;font-size:1.05rem">Sin filas ni papeleo</div>
-        </div>
-        <div class="card">
-          <div class="icon">💰</div>
-          <h3>Comisiones de Viaje</h3>
-          <p>Gana hasta 8% por reservas de tours, vuelos y hoteles. Sin invertir, sin inventario.</p>
-          <div class="price" style="color:#94a3b8;font-size:0.9rem">Sin costo</div>
-          <div class="price" style="color:#38bdf8;font-weight:600;font-size:1.05rem">Afiliado</div>
+        <div class="card" style="text-align:center">
+          <div class="icon" style="font-size:3rem">💰</div>
+          <h3>3. Tú cobras</h3>
+          <p>Solo llegas a cerrar la venta. El bot hizo el trabajo pesado. Más ventas, cero esfuerzo extra.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="proyectos" style="background:#0d0d24">
+  <!-- PLANES -->
+  <section style="background:#fff;border-top:1px solid #e2e8f0">
+    <div class="container">
+      <h2>Planes <span>simples</span></h2>
+      <p class="sub">Sin contratos, sin cláusulas escondidas. Eliges cómo pagas.</p>
+      <div class="grid">
+        <div class="card">
+          <div class="icon">⭐</div>
+          <h3>Starter</h3>
+          <p>Bot de WhatsApp o mini landing page. Ideal para negocios que quieren empezar a capturar leads sin complicaciones.</p>
+          <div style="margin-top:16px">
+            <div style="color:#94a3b8;font-size:0.9rem">Setup único: <strong style="color:#1e293b">$3,500</strong></div>
+            <div class="price" style="font-size:1.2rem">$699/mes</div>
+            <div style="color:#94a3b8;font-size:0.8rem">Soporte incluido</div>
+          </div>
+        </div>
+        <div class="card" style="border-color:#2563eb;box-shadow:0 4px 24px rgba(37,99,235,0.1)">
+          <div class="icon">🔥</div>
+          <div class="tag">Más popular</div>
+          <h3>Growth</h3>
+          <p>Bot de WhatsApp + landing page + asistente IA. Captura, califica y da seguimiento automático a cada lead.</p>
+          <div style="margin-top:16px">
+            <div style="color:#94a3b8;font-size:0.9rem">Setup único: <strong style="color:#1e293b">$7,500</strong></div>
+            <div class="price" style="font-size:1.2rem">$1,499/mes</div>
+            <div style="color:#94a3b8;font-size:0.8rem">Soporte prioritario</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="icon">🚀</div>
+          <h3>Pro</h3>
+          <p>Sistema completo: bot + landing + IA + leads + Meta Ads. Automatización total del proceso de ventas.</p>
+          <div style="margin-top:16px">
+            <div style="color:#94a3b8;font-size:0.9rem">Setup único: <strong style="color:#1e293b">$15,000</strong></div>
+            <div class="price" style="font-size:1.2rem">$2,999/mes</div>
+            <div style="color:#94a3b8;font-size:0.8rem">Soporte VIP + reportes</div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:32px">
+        <p style="color:#64748b;margin-bottom:12px">¿Prefieres pagar una sola vez?</p>
+        <div style="display:inline-block;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:16px 32px">
+          <span style="font-size:1rem;font-weight:600">Solo Setup</span>
+          <span style="color:#64748b;margin:0 12px">—</span>
+          <span style="color:#f59e0b;font-weight:600">Desde $3,500</span>
+          <span style="color:#64748b;margin-left:8px;font-size:0.9rem">sin mensualidad</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <section>
     <div class="container">
       <h2>Proyectos <span>en acción</span></h2>
-      <p class="sub">Casos reales de automatización que ya generan resultados</p>
+      <p class="sub">Casos reales de automatización que ya generan resultados en Morelia</p>
       <div class="grid">
         <div class="card">
           <div class="icon">🚕</div>
           <div class="tag">Morelia</div>
           <h3>Choferes Morelia</h3>
-          <p>Servicio de transporte ejecutivo conectado vía WhatsApp. Los clientes piden su viaje en segundos sin llamar. Cotizaciones, reservas y seguimiento automatizados.</p>
-          <div class="price">Transporte inteligente</div>
+          <p>Servicio de transporte ejecutivo conectado vía WhatsApp. Los clientes piden su viaje en segundos. Cotizaciones, reservas y seguimiento automatizados.</p>
         </div>
         <div class="card">
           <div class="icon">👶</div>
           <div class="tag">Morelia</div>
           <h3>Niñeras Morelia</h3>
-          <p>Plataforma de cuidado infantil con selección automatizada. Las familias encuentran niñeras verificadas cerca de su colonia, agendan y pagan todo por WhatsApp.</p>
-          <div class="price">Cuidado infantil 24/7</div>
+          <p>Plataforma de cuidado infantil con selección automatizada. Familias encuentran niñeras verificadas cerca de su colonia, agendan y pagan por WhatsApp.</p>
         </div>
         <div class="card">
           <div class="icon">🍕</div>
           <div class="tag">WhatsApp Bot</div>
-          <h3>Restaurantes con Bot</h3>
-          <p>Menú digital, pedidos y pagos automatizados por WhatsApp. Sin apps, sin meseros tomando notas. El bot recibe el pedido, lo envía a cocina y notifica al cliente.</p>
-          <div class="price">Restaurantes automatizados</div>
-        </div>
-        <div class="card">
-          <div class="icon">✈️</div>
-          <div class="tag">Afiliado</div>
-          <h3>Travel Affiliates</h3>
-          <p>Gana comisiones por cada reserva de vuelo, hotel o paquete turístico. Sin invertir ni manejar inventario. Ideal para creadores de contenido y agencias de viajes.</p>
-          <div class="price">Comisiones de viaje</div>
+          <h3>Restaurantes</h3>
+          <p>Menú digital, pedidos y pagos automatizados por WhatsApp. Sin apps, el bot recibe el pedido, lo envía a cocina y notifica al cliente.</p>
         </div>
       </div>
     </div>
   </section>
 
-  
-  <section style="background:#0f0f2a">
+  <!-- DEMOS -->
+  <section id="demos">
     <div class="container">
       <h2>Mira cómo <span>funciona</span></h2>
-      <p class="sub">Demos rápidos de nuestras automatizaciones en acción</p>
-                  <div class="grid">
-        <div class="card" style="text-align:center">
-          <video controls playsinline style="width:100%;border-radius:12px;aspect-ratio:16/9;background:#000" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='360' viewBox='0 0 640 360'%3E%3Crect fill='%231a1a3e' width='640' height='360'/%3E%3Ctext x='320' y='180' text-anchor='middle' fill='%236366f1' font-size='28' font-family='sans-serif'%3E%F0%9F%93%B1 Bot WhatsApp%3C/text%3E%3C/svg%3E">
+      <p class="sub">Demos rápidas de nuestras automatizaciones en acción</p>
+      <div class="grid">
+        <div class="card video-card">
+          <video controls playsinline poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='360' viewBox='0 0 640 360'%3E%3Crect fill='%23dbeafe' width='640' height='360'/%3E%3Ctext x='320' y='170' text-anchor='middle' fill='%232563eb' font-size='28' font-family='sans-serif'%3E%F0%9F%93%B1 Bot WhatsApp%3C/text%3E%3Ctext x='320' y='210' text-anchor='middle' fill='%2364748b' font-size='16' font-family='sans-serif'%3E%C2%A1Presiona play!%3C/text%3E%3C/svg%3E">
             <source src="/demos/whatsapp-bot-demo.mp4" type="video/mp4">
           </video>
-          <h3>Bot WhatsApp en acción</h3>
+          <h3>Bot WhatsApp</h3>
           <p>Responde clientes, califica leads y agenda citas 24/7.</p>
         </div>
-        <div class="card" style="text-align:center">
-          <video controls playsinline style="width:100%;border-radius:12px;aspect-ratio:16/9;background:#000" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='360' viewBox='0 0 640 360'%3E%3Crect fill='%231a1a3e' width='640' height='360'/%3E%3Ctext x='320' y='180' text-anchor='middle' fill='%2338bdf8' font-size='28' font-family='sans-serif'%3E%F0%9F%8C%90 Landing Page%3C/text%3E%3C/svg%3E">
+        <div class="card video-card">
+          <video controls playsinline poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='360' viewBox='0 0 640 360'%3E%3Crect fill='%23dbeafe' width='640' height='360'/%3E%3Ctext x='320' y='170' text-anchor='middle' fill='%232563eb' font-size='28' font-family='sans-serif'%3E%F0%9F%8C%90 Landing%3C/text%3E%3Ctext x='320' y='210' text-anchor='middle' fill='%2364748b' font-size='16' font-family='sans-serif'%3E%C2%A1Presiona play!%3C/text%3E%3C/svg%3E">
             <source src="/demos/landing-whatsapp-demo.mp4" type="video/mp4">
           </video>
           <h3>Landing + WhatsApp</h3>
           <p>Cliente llega, ve la página y en 30 segundos ya está conversando.</p>
         </div>
-        <div class="card" style="text-align:center">
-          <video controls playsinline style="width:100%;border-radius:12px;aspect-ratio:16/9;background:#000" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='360' viewBox='0 0 640 360'%3E%3Crect fill='%231a1a3e' width='640' height='360'/%3E%3Ctext x='320' y='180' text-anchor='middle' fill='%23a78bfa' font-size='28' font-family='sans-serif'%3E%F0%9F%A4%96 IA Ventas%3C/text%3E%3C/svg%3E">
+        <div class="card video-card">
+          <video controls playsinline poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='360' viewBox='0 0 640 360'%3E%3Crect fill='%23dbeafe' width='640' height='360'/%3E%3Ctext x='320' y='170' text-anchor='middle' fill='%232563eb' font-size='28' font-family='sans-serif'%3E%F0%9F%A4%96 IA Ventas%3C/text%3E%3Ctext x='320' y='210' text-anchor='middle' fill='%2364748b' font-size='16' font-family='sans-serif'%3E%C2%A1Presiona play!%3C/text%3E%3C/svg%3E">
             <source src="/demos/ai-sales-demo.mp4" type="video/mp4">
           </video>
-          <h3>Asistente IA para ventas</h3>
+          <h3>Asistente IA</h3>
           <p>Un empleado digital que trabaja 24/7. Nunca se cansa, nunca deja de vender.</p>
         </div>
       </div>
-            <div style="background:#38bdf8;color:#0a0a1a;padding:4px 16px;border-radius:20px;display:inline-block;font-size:0.85rem;margin-bottom:8px">Interactivo</div>
+    </div>
+  </section>
 
+  <!-- CONTACTO -->
   <section id="contact">
     <div class="container">
       <h2>¿Listo para <span>automatizar</span>?</h2>
       <p class="sub">Respuesta en menos de 5 minutos</p>
-      <div class="contact-card"><section id="contact">
-    <div class="container">
-      <h2>¿Listo para <span>automatizar</span>?</h2>
-      <p class="sub">Respuesta en menos de 5 minutos</p>
       <div class="contact-card">
-
-      <div style="margin-top:24px;display:inline-block;background:#065f46;color:#6ee7b7;padding:8px 20px;border-radius:20px;font-size:0.9rem">
-        ⚡ Respuesta automática en menos de 2 minutos
+        <div class="badge">⚡ Respuesta automática en menos de 2 minutos</div>
+        <p style="font-size:1.2rem;margin-bottom:8px">Setup único o mensualidad con soporte</p>
+        <p style="color:#bfdbfe;margin-bottom:24px;font-size:0.95rem">Tú eliges. Ambos incluyen el sistema funcionando.</p>
+        <a href="https://wa.me/5215512299225?text=Hola%20Cero%20MX%2C%20quiero%20saber%20m%C3%A1s" class="btn">Contactar por WhatsApp</a>
+        <p style="margin-top:16px;color:#bfdbfe;font-size:0.9rem">o al correo <a href="mailto:espcris05@gmail.com">espcris05@gmail.com</a></p>
+        <p style="color:#bfdbfe;font-size:0.8rem;margin-top:8px">Disponible en México, Estados Unidos y Latinoamérica</p>
       </div>
-
-        <p style="margin-bottom:16px;font-size:1.1rem">¿Setup único o mensualidad con soporte?</p><p style="color:#94a3b8;margin-bottom:16px">Tú eliges. Ambos incluyen el sistema funcionando.</p>
-        <a href="https://wa.me/5215512299225?text=Hola%20Zero%20MX%2C%20quiero%20saber%20m%C3%A1s" class="btn">Contactar por WhatsApp</a>
-        <p style="margin-top:16px;color:#64748b">o al correo <a href="mailto:espcris05@gmail.com">espcris05@gmail.com</a></p><p style="color:#64748b;font-size:0.85rem;margin-top:8px">Disponible en México, Estados Unidos y Latinoamérica</p>
+      <div style="margin-top:40px">
+        <p style="color:#bfdbfe;font-size:1.1rem">¿Quieres ver una demo personalizada para tu negocio?</p>
+        <a href="https://wa.me/5215512299225?text=Quiero%20ver%20una%20demo" class="btn" style="margin-top:12px;background:#fff;color:#1e3a5f">Pide tu demo gratis →</a>
       </div>
     </div>
   </section>
 
   <footer>
     <div class="container">
-      <p>© 2026 Zero MX — Automatización Inteligente para tu Negocio</p>
+      <p>© 2026 Cero MX — Automatización Inteligente para tu Negocio</p>
     </div>
   </footer>
 </body>
 </html>
-
-      <div style="text-align:center;margin-top:32px">
-        <p style="color:#94a3b8;font-size:1.1rem">¿Quieres ver una demo personalizada para tu negocio?</p>
-        <a href="https://wa.me/5215512299225?text=Quiero%20ver%20una%20demo" class="btn" style="margin-top:12px">Pide tu demo gratis →</a>
-      </div>
-
