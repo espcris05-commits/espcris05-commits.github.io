@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zero MX — Demo Interactiva</title>
+  <meta name="description" content="Prueba la demo interactiva del asistente Zero MX. Simula una conversación real de atención automatizada para tu negocio.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+      background:linear-gradient(135deg,#f8fafc 0%,#eff6ff 100%);
+      color:#0f172a;line-height:1.6;min-height:100vh;
+    }
+    .top-bar{
+      background:#0f172a;color:#fff;text-align:center;padding:10px;
+      font-size:0.8rem;font-weight:500;
+    }
+    .top-bar a{color:#60a5fa;text-decoration:none;}
+    .top-bar a:hover{text-decoration:underline;}
+    .title-area{text-align:center;padding:24px 16px 8px;}
+    .title-area .logo{width:48px;height:48px;margin-bottom:8px;border-radius:50%;}
+    .title-area h1{font-size:1.3rem;color:#0f172a;}
+    .title-area p{font-size:0.85rem;color:#64748b;margin-top:4px;}
+    .phone-wrapper{display:flex;justify-content:center;padding:16px;gap:24px;flex-wrap:wrap;}
+    .phone-mock{
+      width:100%;max-width:380px;background:#fff;border-radius:32px;
+      box-shadow:0 20px 60px rgba(0,0,0,0.12);overflow:hidden;
+      border:8px solid #1e293b;transition:all 0.3s;
+    }
+    .phone-header{
+      background:#2563eb;color:#fff;padding:16px 20px;
+      display:flex;align-items:center;gap:12px;
+    }
+    .phone-header .avatar{
+      width:40px;height:40px;background:#dbeafe;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;font-size:20px;
+    }
+    .phone-header h3{font-size:16px}
+    .phone-header p{font-size:12px;opacity:.8}
+    .chat-area{
+      padding:16px;background:#f1f5f9;min-height:480px;max-height:520px;
+      display:flex;flex-direction:column;gap:8px;overflow-y:auto;
+    }
+    .bubble{
+      max-width:80%;padding:10px 14px;border-radius:16px;font-size:14px;
+      line-height:1.4;animation:fadeIn .3s ease;white-space:pre-wrap;
+    }
+    .bubble.client{align-self:flex-start;background:#fff;border-bottom-left-radius:4px;box-shadow:0 1px 2px rgba(0,0,0,0.04);}
+    .bubble.bot{align-self:flex-end;background:#2563eb;color:#fff;border-bottom-right-radius:4px;}
+    .bubble.system{align-self:center;background:#fef3c7;color:#92400e;font-size:11px;border-radius:8px;padding:8px 14px;max-width:95%;}
+    .typing{display:flex;gap:4px;align-self:flex-end;padding:12px 16px;background:#2563eb;border-radius:16px;border-bottom-right-radius:4px;animation:fadeIn .3s ease;}
+    .typing span{width:8px;height:8px;background:rgba(255,255,255,.6);border-radius:50%;animation:bounce 1.4s infinite;}
+    .typing span:nth-child(2){animation-delay:.2s}
+    .typing span:nth-child(3){animation-delay:.4s}
+    .options{display:flex;flex-wrap:wrap;gap:8px;align-self:flex-end;margin-top:4px;animation:fadeIn .3s ease;}
+    .options button{
+      background:#fff;border:1.5px solid #2563eb;color:#2563eb;padding:8px 16px;
+      border-radius:20px;font-size:12px;cursor:pointer;font-weight:500;
+      transition:all .2s;font-family:inherit;
+    }
+    .options button:hover{background:#2563eb;color:#fff;}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes bounce{0%,80%,100%{transform:scale(0)}40%{transform:scale(1)}}
+    .controls{max-width:380px;margin:8px auto;text-align:center;padding:0 16px;}
+    .controls .btn-group{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
+    .controls button{
+      background:#0f172a;color:#fff;border:none;padding:10px 24px;border-radius:12px;
+      font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;
+    }
+    .controls button:hover{background:#1e293b;}
+    .controls .secondary{background:#fff;color:#0f172a;border:2px solid #e2e8f0;}
+    .controls .secondary:hover{background:#f8fafc;}
+    .controls .whatsapp{background:#25D366;display:inline-flex;align-items:center;gap:8px;}
+    .controls .whatsapp:hover{background:#20bd5a;}
+    .step-counter{
+      text-align:center;font-size:0.75rem;color:#94a3b8;margin-bottom:8px;padding:8px 0;
+    }
+    .bottom-cta{
+      text-align:center;padding:32px 16px 48px;max-width:500px;margin:0 auto;
+    }
+    .bottom-cta .cta-btn{
+      display:inline-flex;align-items:center;gap:8px;padding:14px 36px;
+      background:#2563eb;color:#fff;text-decoration:none;border-radius:14px;
+      font-weight:600;font-size:1rem;transition:all 0.2s;
+    }
+    .bottom-cta .cta-btn:hover{background:#1d4ed8;transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,99,235,0.3);}
+    .footer-links{text-align:center;padding:16px;font-size:0.8rem;color:#94a3b8;}
+
+/color:#2563eb;text-decoration:none;}
+    @media(max-width:480px){
+      .phone-mock{border-width:4px;max-width:340px;}
+      .chat-area{min-height:400px;max-height:460px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    ⚡ Zero MX — <a href="index.html">Volver al inicio</a>
+  </div>
+
+  <div class="title-area">
+    <img src="assets/zero-mx-logo.png" alt="Zero MX" class="logo">
+    <h1>📱 Demo Interactiva</h1>
+    <p>Así es como tus clientes interactúan con tu bot de WhatsApp. <strong>Pruébalo 👇</strong></p>
+  </div>
+
+  <div class="phone-wrapper">
+    <div class="phone-mock" id="phone">
+      <div class="phone-header">
+        <div class="avatar">🤖</div>
+        <div>
+          <h3>Zero Asistente</h3>
+          <p>En línea · Responde al instante</p>
+        </div>
+      </div>
+
+      <div class="chat-area" id="chat">
+        <div class="bubble system">💬 Esta es una simulación. Tus clientes reales verían esto en WhatsApp.</div>
+        <div class="bubble bot">¡Hola! 👋 Soy Zero, el asistente virtual del negocio. ¿En qué puedo ayudarte hoy?</div>
+        <div class="options" id="options1">
+          <button onclick="showResponse(1)">📋 Ver precios</button>
+          <button onclick="showResponse(2)">🕐 Horarios</button>
+          <button onclick="showResponse(3)">📅 Reservar</button>
+          <button onclick="showResponse(4)">👤 Hablar con persona</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <div class="btn-group">
+      <button onclick="resetDemo()">🔄 Reiniciar demo</button>
+      <button class="secondary" onclick="window.open('https://wa.me/5215512299225?text=Quiero%20una%20demo%20real%20para%20mi%20negocio')">📱 Quiero la demo real</button>
+    </div>
+    <div class="step-counter" id="stepCounter">Selecciona una opción arriba para empezar</div>
+  </div>
+
+  <div class="bottom-cta">
+    <p style="color:#64748b;margin-bottom:16px;">✅ Esto es exactamente lo que tus clientes verán. <strong>¿Listo para tenerlo?</strong></p>
+    <a href="https://wa.me/5215512299225?text=Hola%20Zero%20MX%2C%20vi%20la%20demo%20interactiva%20y%20quiero%20automatizar%20mi%20negocio" class="cta-btn">
+      💬 Sí, quiero automatizar mi negocio
+    </a>
+  </div>
+
+  <div class="footer-links">
+    <a href="index.html">← Volver al inicio</a> · <a href="https://wa.me/5215512299225">Contacto WhatsApp</a>
+  </div>
+
+  <script>
+    function showResponse(opt) {
+      const chat = document.getElementById('chat');
+      const optionsDiv = document.getElementById('options1');
+      document.querySelectorAll('.options').forEach(el => el.remove());
+      document.querySelectorAll('.typing').forEach(el => el.remove());
+
+      const responses = {
+        1: {
+          client: '📋 Quiero ver los precios',
+          bot: '¡Claro! 🙌 Aquí están nuestros paquetes:\n\n⭐ Starter — $3,500 setup\nBot WhatsApp o landing page\n\n🔥 Growth — $7,500 setup\nBot + landing + IA\n\n🚀 Pro — $15,000 setup\nSistema completo + leads\n\n💡 Solo Setup — Desde $3,500\nSin mensualidad\n\n¿Te interesa alguno? Te conecto con el equipo.'
+        },
+        2: {
+          client: '🕐 ¿Cuál es su horario?',
+          bot: '📍 Morelia, Michoacán\n\n🕐 Atención humana:\nLun-Vie: 9AM - 8PM\nSáb: 10AM - 6PM\n\n💬 El bot funciona 24/7 — siempre respondemos al instante, hasta a las 3 AM.'
+        },
+        3: {
+          client: '📅 Quiero reservar una asesoría',
+          bot: '¡Perfecto! 🎯 Para agendar necesito:\n\n1️⃣ Nombre completo\n2️⃣ ¿Qué necesitas? (cotización, reserva, consulta)\n3️⃣ Día y hora preferida\n4️⃣ Teléfono de contacto\n\n¿Me compartes tus datos? El equipo te confirma al instante.'
+        },
+        4: {
+          client: '👤 Quiero hablar con una persona',
+          bot: 'Claro, te conectamos con el equipo. 🌟\n\nMientras, ¿quieres dejar tu nombre y teléfono para que te contacten más rápido? Así no pierdes tu lugar.'
+        }
+      };
+
+      const resp = responses[opt];
+      if (!resp) return;
+
+      document.getElementById('stepCounter').textContent = '⏳ El bot está respondiendo...';
+
+      setTimeout(() => {
+        const clientBubble = document.createElement('div');
+        clientBubble.className = 'bubble client';
+        clientBubble.textContent = resp.client;
+        chat.appendChild(clientBubble);
+        chat.scrollTop = chat.scrollHeight;
+      }, 300);
+
+      setTimeout(() => {
+        const typing = document.createElement('div');
+        typing.className = 'typing';
+        for (let i = 0; i < 3; i++) {
+          const dot = document.createElement('span');
+          typing.appendChild(dot);
+        }
+        typing.id = 'typing';
+        chat.appendChild(typing);
+        chat.scrollTop = chat.scrollHeight;
+      }, 800);
+
+      setTimeout(() => {
+        const typingEl = document.getElementById('typing');
+        if (typingEl) typingEl.remove();
+
+        const botBubble = document.createElement('div');
+        botBubble.className = 'bubble bot';
+        botBubble.textContent = resp.bot;
+        chat.appendChild(botBubble);
+        chat.scrollTop = chat.scrollHeight;
+        document.getElementById('stepCounter').textContent = '✅ Bot respondió. ¿Quieres probar otra opción?';
+
+        setTimeout(() => {
+          const menuOpt = document.createElement('div');
+          menuOpt.className = 'options';
+          menuOpt.innerHTML = '<button onclick="resetDemo()" style="background:#f0fdf4;border:1px solid #2563eb;color:#2563eb;padding:8px 16px;border-radius:20px;font-size:12px;cursor:pointer;font-weight:500">⬅️ Volver al inicio</button>';
+          chat.appendChild(menuOpt);
+          chat.scrollTop = chat.scrollHeight;
+        }, 600);
+      }, 2000);
+    }
+
+    function resetDemo() {
+      const chat = document.getElementById('chat');
+      chat.innerHTML = `
+        <div class="bubble system">💬 Esta es una simulación. Tus clientes reales verían esto en WhatsApp.</div>
+        <div class="bubble bot">¡Hola! 👋 Soy Zero, el asistente virtual del negocio. ¿En qué puedo ayudarte hoy?</div>
+        <div class="options" id="options1">
+          <button onclick="showResponse(1)">📋 Ver precios</button>
+          <button onclick="showResponse(2)">🕐 Horarios</button>
+          <button onclick="showResponse(3)">📅 Reservar</button>
+          <button onclick="showResponse(4)">👤 Hablar con persona</button>
+        </div>
+      `;
+      document.querySelectorAll('.options').forEach(el => { if(el.id !== 'options1') el.remove(); });
+      document.getElementById('stepCounter').textContent = 'Selecciona una opción arriba para empezar';
+    }
+  </script>
+</body>
+</html>
