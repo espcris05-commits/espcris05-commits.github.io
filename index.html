@@ -152,6 +152,20 @@
     .demo-cta .btn-demo{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:12px;font-weight:600;font-size:0.95rem;text-decoration:none;background:#fff;color:#0f172a;transition:all .3s}
     .demo-cta .btn-demo:hover{box-shadow:0 8px 30px rgba(255,255,255,0.15)}
 
+    /* PAYMENT */
+    #payment{background:#fff;padding:80px 0}
+    .payment-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+    .payment-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:36px 28px;text-align:center;transition:all .3s}
+    .payment-card:hover{border-color:#2563eb;box-shadow:0 8px 30px rgba(37,99,235,0.08)}
+    .payment-card.featured-payment{border-color:#2563eb;background:#eff6ff}
+    .payment-icon{font-size:2.5rem;margin-bottom:12px}
+    .payment-card h3{font-size:1.1rem;font-weight:700;margin-bottom:8px;color:#0f172a}
+    .payment-card p{color:#64748b;font-size:0.9rem;line-height:1.5}
+    .payment-note{text-align:center;margin-top:32px;padding:16px;background:#f1f5f9;border-radius:12px;font-size:0.85rem;color:#475569}
+    
+    /* RESPONSIVE PAYMENT */
+    @media(max-width:768px){.payment-grid{grid-template-columns:1fr}}
+    
     footer{background:#0f172a;color:#475569;text-align:center;padding:32px 0;font-size:0.85rem;border-top:1px solid rgba(255,255,255,0.05)}
     footer a{color:#64748b;text-decoration:none}
     footer a:hover{color:#94a3b8}
@@ -388,7 +402,7 @@
       </div>
       <div style="text-align:center;margin-top:40px;">
         <p style="color:#64748b;margin-bottom:16px;">¿Quieres ver esto funcionando en tu negocio?</p>
-        <a href="https://wa.me/5215512299225?text=Quiero%20una%20demo%20personalizada" class="btn-primary" style="font-size:1.05rem;">💬 Quiero mi demo personalizada →</a>
+        <a href="https://wa.me/5214439066555?text=Quiero%20una%20demo%20personalizada" class="btn-primary" style="font-size:1.05rem;">💬 Quiero mi demo personalizada →</a>
       </div>
     </div>
   </section>
@@ -457,12 +471,41 @@
         <div class="contact-badge">⚡ Respuesta automática en menos de 2 minutos</div>
         <h3>Hablemos de tu negocio</h3>
         <p class="contact-sub">Setup único o mensualidad con soporte. Tú eliges.</p>
-        <a href="https://wa.me/5215512299225?text=Hola%20Zero%20MX%2C%20quiero%20saber%20m%C3%A1s" class="btn-contact">💬 Contactar por WhatsApp</a>
+        <a href="https://wa.me/5214439066555?text=Hola%20Zero%20MX%2C%20quiero%20saber%20m%C3%A1s" class="btn-contact">💬 Contactar por WhatsApp</a>
         <p class="contact-alt">o al correo <a href="mailto:espcris05@gmail.com">espcris05@gmail.com</a></p>
       </div>
       <div class="demo-cta">
         <p>¿Quieres ver una demo personalizada para tu negocio?</p>
-        <a href="https://wa.me/5215512299225?text=Quiero%20ver%20una%20demo" class="btn-demo">🎬 Pide tu demo gratis →</a>
+        <a href="https://wa.me/5214439066555?text=Quiero%20ver%20una%20demo" class="btn-demo">🎬 Pide tu demo gratis →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="payment">
+    <div class="container">
+      <div class="section-label">💳 Métodos de Pago</div>
+      <h2>Paga como <span>prefieras</span></h2>
+      <p class="sub">Aceptamos varios métodos para tu comodidad. Todos los pagos son seguros.</p>
+      <div class="payment-grid">
+        <div class="payment-card">
+          <div class="payment-icon">💵</div>
+          <h3>Efectivo</h3>
+          <p>Paga en efectivo directamente en Morelia. Coordinamos el punto de encuentro por WhatsApp.</p>
+        </div>
+        <div class="payment-card">
+          <div class="payment-icon">🏦</div>
+          <h3>Transferencia</h3>
+          <p>Transferencia SPEI a cuenta BBVA o Banorte. Recibes factura y acceso inmediato.</p>
+        </div>
+        <div class="payment-card featured-payment">
+          <div class="payment-icon">🌐</div>
+          <h3>PayPal</h3>
+          <p>Paga con PayPal desde cualquier país. Aceptamos tarjetas de crédito/débito sin necesidad de cuenta PayPal.</p>
+          <p style="margin-top:12px;font-size:0.85rem;color:#64748b;">Enviar a: <strong>cerouber88@gmail.com</strong></p>
+        </div>
+      </div>
+      <div class="payment-note">
+        <p>🔒 Todos los pagos son procesados de forma segura. Una vez recibido tu pago, activamos tu servicio en menos de 24 horas.</p>
       </div>
     </div>
   </section>
@@ -470,6 +513,7 @@
   <footer>
     <div class="container">
       <p>© 2026 <a href="https://zeromx.lat">Zero MX</a> — Automatización Inteligente para tu Negocio</p>
+      <p style="margin-top:8px;font-size:0.8rem;">Métodos de pago: Efectivo (Morelia) · Transferencia SPEI · PayPal: cerouber88@gmail.com</p>
     </div>
   </footer>
 </body>
